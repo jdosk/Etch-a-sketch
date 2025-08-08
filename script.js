@@ -1,21 +1,25 @@
+// Get the container div
 const container = document.querySelector(".container");
-//const resetButton = document.querySelector(".reset").addEventListener(
 
-//)
+// Add on click event to the button, should call the setGrid function
 document.querySelector(".reset").addEventListener("click", function () {
     const userInput = prompt("Enter a number:");
     const num = parseFloat(userInput);
-    if (!isNaN(num) && num > 0 && num < 101) {
+
+    // Check if input is number between 1 and 100
+    if (!isNaN(num) && num > 0 && num <= 100) {
       setGrid(num);
     } else {
       alert("That's not a valid number. Please enter a number between 1 and 100.");
     }
   });
 
+// Function to randomize the hover color
 function randomColor() {
 
 }
 
+// Removes previous grid and sets the new grid with number of sides based on user input
 function setGrid(num) {
   container.innerHTML = "";
 
@@ -33,17 +37,3 @@ function setGrid(num) {
     container.appendChild(newDiv);
   }
 }
-
-// add the internal boxes
-//for (let i = 0; i < 256; i++) {
-//  const newDiv = document.createElement('div');
-//  newDiv.classList.add('hover-box');
-//  newDiv.style.height = '50px';
-//  newDiv.style.width = '50px';
-//
-//  newDiv.addEventListener('mouseover', () => {
-//    newDiv.style.backgroundColor = 'orange';
-//  });
-//
-//  container.appendChild(newDiv);
-//}
