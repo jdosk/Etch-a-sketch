@@ -9,7 +9,7 @@ html, body {
 .container {
     display: flex;
     border: solid black 1px;
-    height: 400px;
-    width: 400px;
+    height: 800px;
+    width: 800px;
     flex-wrap: wrap;
 }
