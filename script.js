@@ -22,18 +22,29 @@ function randomColor() {
 // Removes previous grid and sets the new grid with number of sides based on user input
 function setGrid(num) {
   container.innerHTML = "";
+  let size = 800 / num;
 
-  for (let i = 0; i < num * num; i++) {
-    const newDiv = document.createElement('div');
+  for (let i = 0; i < num; i++) {
 
-    newDiv.classList.add('hover-box');
-    newDiv.style.height = 800 / num + "px";
-    newDiv.style.width = 800 / num + "px";
+    const newRow = document.createElement('div');
+    newRow.style.gap = 0;
+    newRow.style.display = "flex";
+    
+    container.appendChild(newRow);
 
-    newDiv.addEventListener('mouseover', () => {
-      newDiv.style.backgroundColor = 'orange';
-    });
+    for (let j = 0; j < num; j++) {
 
-    container.appendChild(newDiv);
+      const newDiv = document.createElement('div');
+
+      newDiv.classList.add('hover-box');
+      newDiv.style.height = size + "px";
+      newDiv.style.width = size + "px";
+
+      newDiv.addEventListener('mouseover', () => {
+        newDiv.style.backgroundColor = 'blue';
+      });
+
+      newRow.appendChild(newDiv);
+    }
   }
 }
